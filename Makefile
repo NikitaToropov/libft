@@ -90,7 +90,7 @@ $(NAME): $(OBJECTS)
 
 $(INCLUDES)/%.h:
 
-$%(OBJECTS): $%(SRCS)
+$%(OBJECTS):$%(SRCS)
 # $(OBJECTS):
 # ./%.o:./%.c
 	gcc -Wall -Wextra -Werror -I $(INCLUDES) -c $< -o $@
