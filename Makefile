@@ -88,10 +88,13 @@ $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
-$(OBJECTS):
-./%.o:./%.c 
+$(INCLUDES)/%.h:
+
+$%(OBJECTS): $%(SRCS)
+# $(OBJECTS):
+# ./%.o:./%.c
 	gcc -Wall -Wextra -Werror -I $(INCLUDES) -c $< -o $@
-# $%(OBJECTS): $%(SRCS)	
+
 
 clean:
 	rm -f $(OBJECTS)
