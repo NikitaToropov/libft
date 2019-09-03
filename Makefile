@@ -80,6 +80,8 @@ OBJECTS = $(SRCS:.c=.o)
 
 INCLUDES = ./
 
+HEADER = ./libft.h
+
 .PHONY: all clean fclean re reclean
 
 all: $(NAME)
@@ -88,13 +90,8 @@ $(NAME): $(OBJECTS)
 	ar rc $(NAME) $(OBJECTS)
 	ranlib $(NAME)
 
-$(INCLUDES)/%.h:
-
-$%(OBJECTS):$%(SRCS)
-# $(OBJECTS):
-# ./%.o:./%.c
+./%.o: ./%.c $(HEADER)
 	gcc -Wall -Wextra -Werror -I $(INCLUDES) -c $< -o $@
-
 
 clean:
 	rm -f $(OBJECTS)
