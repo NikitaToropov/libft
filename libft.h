@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <stdlib.h>
 
 typedef struct		s_list
 {
@@ -21,11 +22,6 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
-
-
-
-
-
 
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
@@ -91,5 +87,6 @@ int					ft_num_w(char const *str, char c);
 char				*ft_push_w(char *str, char c);
 void				ft_lstpush(t_list *alst, t_list *new);
 size_t				ft_lstlen(t_list *list);
+void				*ft_realloc(void *ptr, size_t size);
 
 #endif
