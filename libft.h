@@ -15,6 +15,12 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+
+# define BUFF_SIZE  500
 
 typedef struct		s_list
 {
@@ -89,5 +95,6 @@ void				ft_lstpush(t_list *alst, t_list *new);
 size_t				ft_lstlen(t_list *list);
 void				*ft_realloc(void *ptr, size_t size);
 int					ft_isspace(const char c);
+int					get_next_line(const int fd, char **line);
 
 #endif

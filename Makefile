@@ -77,6 +77,7 @@ SRCS = ft_memset.c \
 	ft_lstlen.c \
 	ft_realloc.c \
 	ft_isspace.c \
+	ft_get_next_line.c \
 
 OBJECTS = $(SRCS:.c=.o)
 
