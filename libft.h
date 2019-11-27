@@ -95,6 +95,6 @@ void				ft_lstpush(t_list *alst, t_list *new);
 size_t				ft_lstlen(t_list *list);
 void				*ft_realloc(void *ptr, size_t size);
 int					ft_isspace(const char c);
-int					get_next_line(const int fd, char **line);
+int					ft_get_next_line(const int fd, char **line);
 
 #endif
