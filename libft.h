@@ -96,5 +96,6 @@ size_t				ft_lstlen(t_list *list);
 void				*ft_realloc(void *ptr, size_t size);
 int					ft_isspace(const char c);
 int					ft_get_next_line(const int fd, char **line);
+char				*ft_strjoin_free(char *s1, char *s2);
 
 #endif

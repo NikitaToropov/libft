@@ -24,6 +24,7 @@ static int		ft_pusher(char **line, char **s, char *tmp, int fd)
 	if (!*line)
 		return (-1);
 	free(s[fd]);
+	// free(*line);
 	s[fd] = tmp;
 	return (1);
 }
