@@ -6,7 +6,7 @@
 /*   By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 20:47:24 by cmissy            #+#    #+#             */
-/*   Updated: 2019/12/10 13:23:04 by cmissy           ###   ########.fr       */
+/*   Updated: 2019/12/10 13:32:33 by cmissy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static int		ft_pusher(char **line, char **s, char *tmp, int fd)
 	if (!*line)
 		return (-1);
 	free(s[fd]);
-	// free(*line);
 	s[fd] = tmp;
 	return (1);
 }
