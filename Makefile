@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cmissy <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/17 20:58:57 by cmissy            #+#    #+#              #
-#    Updated: 2019/04/30 21:41:52 by cmissy           ###   ########.fr        #
+#    Updated: 2019/12/10 13:19:52 by cmissy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ SRCS = ft_memset.c \
 	ft_lstlen.c \
 	ft_realloc.c \
 	ft_isspace.c \
-	ft_get_next_line.c \
+	get_next_line.c \
 	ft_strjoin_free.c \
 
 OBJECTS = $(SRCS:.c=.o)

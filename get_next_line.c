@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmissy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 20:47:24 by cmissy            #+#    #+#             */
-/*   Updated: 2019/05/07 23:17:30 by cmissy           ###   ########.fr       */
+/*   Updated: 2019/12/10 13:23:04 by cmissy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int		ft_pusher(char **line, char **s, char *tmp, int fd)
 	return (1);
 }
 
-int				ft_get_next_line(const int fd, char **line)
+int				get_next_line(const int fd, char **line)
 {
 	static char		*s[255];
 	char			buff[BUFF_SIZE + 1];
@@ -39,19 +39,21 @@ int				ft_get_next_line(const int fd, char **line)
 	if (fd < 0 || !line || read(fd, buff, 0) < 0)
 		return (-1);
 	if (!s[fd])
-		s[fd] = ft_strnew(0);
-	tmp = ft_strchr(s[fd], '\n');
+		tmp = NULL;
+	else
+		tmp = ft_strchr(s[fd], '\n');
 	while (!tmp && (status = read(fd, buff, BUFF_SIZE)) > 0)
 	{
 		buff[status] = '\0';
-		tmp = ft_strjoin(s[fd], buff);
+		if (!s[fd])
+			tmp = ft_strdup(buff);
+		else
+			tmp = ft_strjoin(s[fd], buff);
 		free(s[fd]);
 		s[fd] = tmp;
 		tmp = ft_strchr(s[fd], '\n');
 	}
 	if (s[fd] && s[fd][0])
-	{
 		return (ft_pusher(line, s, tmp, fd));
-	}
 	return (0);
 }

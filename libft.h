@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmissy <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 14:35:56 by cmissy            #+#    #+#             */
-/*   Updated: 2019/04/30 21:36:37 by cmissy           ###   ########.fr       */
+/*   Updated: 2019/12/10 13:19:45 by cmissy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void				ft_lstpush(t_list *alst, t_list *new);
 size_t				ft_lstlen(t_list *list);
 void				*ft_realloc(void *ptr, size_t size);
 int					ft_isspace(const char c);
-int					ft_get_next_line(const int fd, char **line);
+int					get_next_line(const int fd, char **line);
 char				*ft_strjoin_free(char *s1, char *s2);
 
 #endif
