@@ -6,7 +6,7 @@
 /*   By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 14:35:56 by cmissy            #+#    #+#             */
-/*   Updated: 2019/12/10 13:19:45 by cmissy           ###   ########.fr       */
+/*   Updated: 2020/01/13 14:08:42 by cmissy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,7 @@ void				*ft_realloc(void *ptr, size_t size);
 int					ft_isspace(const char c);
 int					get_next_line(const int fd, char **line);
 char				*ft_strjoin_free(char *s1, char *s2);
+int					ft_max(int a, int b);
+
 
 #endif
