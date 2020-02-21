@@ -6,7 +6,7 @@
 #    By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/17 20:58:57 by cmissy            #+#    #+#              #
-#    Updated: 2020/01/13 17:52:09 by cmissy           ###   ########.fr        #
+#    Updated: 2020/02/21 10:48:42 by cmissy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ SRCS = ft_memset.c \
 	get_next_line.c \
 	ft_strjoin_free.c \
 	ft_max.c \
-
+	ft_allisdigit.c \
 
 OBJECTS = $(SRCS:.c=.o)
 

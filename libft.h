@@ -6,7 +6,7 @@
 /*   By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 14:35:56 by cmissy            #+#    #+#             */
-/*   Updated: 2020/01/13 14:08:42 by cmissy           ###   ########.fr       */
+/*   Updated: 2020/02/21 10:48:19 by cmissy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,6 @@ int					ft_isspace(const char c);
 int					get_next_line(const int fd, char **line);
 char				*ft_strjoin_free(char *s1, char *s2);
 int					ft_max(int a, int b);
-
+int					ft_allisdigit(const char *str);
 
 #endif
