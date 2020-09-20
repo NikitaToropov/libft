@@ -5,14 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/17 20:58:57 by cmissy            #+#    #+#              #
-#    Updated: 2020/02/21 10:48:42 by cmissy           ###   ########.fr        #
+#    Created: 2020/09/20 12:47:41 by cmissy            #+#    #+#              #
+#    Updated: 2020/09/20 13:28:03 by cmissy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = ft_memset.c \
+# dirs
+DIR_S = srcs
+DIR_O = objs
+
+INCLUDES = ./includes
+
+
+# files
+C_FILES = ft_memset.c \
 	ft_bzero.c \
 	ft_memcpy.c \
 	ft_memccpy.c \
@@ -82,27 +90,38 @@ SRCS = ft_memset.c \
 	ft_max.c \
 	ft_allisdigit.c \
 
-OBJECTS = $(SRCS:.c=.o)
+HEADER = $(INCLUDES)/libft.h
+SRCS = $(addprefix $(DIR_S)/,$(C_FILES))
+OBJS = $(addprefix $(DIR_O)/,$(C_FILES:.c=.o))\
 
-INCLUDES = ./
+#libftprintf.a
+PRINTF_DIR = ./ft_printf
+PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-HEADER = ./libft.h
-
-.PHONY: all clean fclean re reclean
+.PHONY: all clean fclean re reclean force
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
+$(NAME): $(DIR_O) $(OBJS) $(PRINTF)
+	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-./%.o: ./%.c $(HEADER)
+$(DIR_O):
+	mkdir -p objs
+
+$(DIR_O)/%.o: $(DIR_S)/%.c $(HEADER)
 	gcc -Wall -Wextra -Werror -g -I $(INCLUDES) -c $< -o $@
 
+$(PRINTF): force
+	make -C $(PRINTF_DIR)
+	cp $(PRINTF) $(NAME)
+
 clean:
-	rm -f $(OBJECTS)
+	rm -rf $(DIR_O)
+	make -C $(PRINTF_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
+	make -C $(PRINTF_DIR) fclean
 
 re: fclean all

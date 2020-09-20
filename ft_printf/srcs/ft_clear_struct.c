@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_allisdigit.c                                    :+:      :+:    :+:   */
+/*   ft_clear_struct.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/21 10:46:43 by cmissy            #+#    #+#             */
-/*   Updated: 2020/02/21 10:51:06 by cmissy           ###   ########.fr       */
+/*   Created: 2019/12/05 18:27:37 by cmissy            #+#    #+#             */
+/*   Updated: 2019/12/05 18:27:38 by cmissy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int			ft_allisdigit(const char *str)
+void	ft_clear_struct(t_args **first)
 {
-	int		i;
+	t_args		*tmp;
+	t_args		*tmp_1;
 
-	i = 0;
-	while (str[i])
+	tmp = *first;
+	while (tmp)
 	{
-		if (ft_isdigit(str[i]))
-			return (0);
-		i++;
+		tmp_1 = tmp->next;
+		if (tmp->string)
+			free(tmp->string);
+		free(tmp);
+		tmp = tmp_1;
 	}
-	return (1);
+	first = NULL;
 }
