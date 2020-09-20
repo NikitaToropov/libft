@@ -6,7 +6,7 @@
 #    By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/20 12:47:41 by cmissy            #+#    #+#              #
-#    Updated: 2020/09/20 13:28:03 by cmissy           ###   ########.fr        #
+#    Updated: 2020/09/20 13:56:56 by cmissy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ DIR_S = srcs
 DIR_O = objs
 
 INCLUDES = ./includes
-
 
 # files
 C_FILES = ft_memset.c \
@@ -103,6 +102,7 @@ PRINTF = $(PRINTF_DIR)/libftprintf.a
 all: $(NAME)
 
 $(NAME): $(DIR_O) $(OBJS) $(PRINTF)
+	cp $(PRINTF) $(NAME)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
@@ -114,7 +114,6 @@ $(DIR_O)/%.o: $(DIR_S)/%.c $(HEADER)
 
 $(PRINTF): force
 	make -C $(PRINTF_DIR)
-	cp $(PRINTF) $(NAME)
 
 clean:
 	rm -rf $(DIR_O)
