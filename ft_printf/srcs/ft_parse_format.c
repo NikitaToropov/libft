@@ -27,14 +27,14 @@ static void		ft_parse_inner(const char *str, t_args *list, size_t *i)
 		if (tmp == *i)
 			break ;
 	}
-	if (str[*i] && ft_strchr("diouxXfcsp", str[*i]))
+	if (str[*i] && ft_strchr_ptf("diouxXfcsp", str[*i]))
 		list->type = str[*i];
 	else
 	{
-		if (!(list->string = ft_memalloc(2)))
+		if (!(list->string = ft_memalloc_ptf(2)))
 			exit(1);
 		list->string[0] = str[*i];
-		list->str_len = ft_strlen(list->string);
+		list->str_len = ft_strlen_ptf(list->string);
 		list->type = str[*i];
 	}
 	if (!(list->string) && (list->num_arg = list->order_counter))

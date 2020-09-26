@@ -37,7 +37,7 @@ static char			ft_find_arg_type(t_args *list, size_t n)
 	while (list)
 	{
 		if (list->num_width == n || list->num_precision == n ||
-		(list->num_arg == n && ft_strchr("diouxXcsp", list->type)))
+		(list->num_arg == n && ft_strchr_ptf("diouxXcsp", list->type)))
 			return ('i');
 		else if (list->num_arg == n && list->type == 'f' && list->length == 'D')
 			return ('F');

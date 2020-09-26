@@ -19,7 +19,7 @@ char	*ft_make_string_bin(void *c, int len)
 	char			*str;
 	unsigned int	pos;
 
-	if (!(str = ft_memalloc(len * 8 + (len * 2 - 1) + 1)))
+	if (!(str = ft_memalloc_ptf(len * 8 + (len * 2 - 1) + 1)))
 		exit(1);
 	byte = (unsigned char*)c + len - 1;
 	pos = 0;

@@ -110,7 +110,7 @@ void		ft_parse_types_x(t_args *list)
 
 void		ft_parse_len(t_args *list)
 {
-	if (list->flags & BINARY && ft_strchr("idfuc", list->type))
+	if (list->flags & BINARY && ft_strchr_ptf("idfuc", list->type))
 		ft_put_bits(list);
 	else
 	{
@@ -129,9 +129,9 @@ void		ft_parse_len(t_args *list)
 		if (list->type == 's')
 		{
 			if (list->int_arg)
-				list->string = ft_strdup((char*)list->int_arg);
+				list->string = ft_strdup_ptf((char *) list->int_arg);
 			else
-				list->string = ft_strdup("(null)");
+				list->string = ft_strdup_ptf("(null)");
 		}
 	}
 }

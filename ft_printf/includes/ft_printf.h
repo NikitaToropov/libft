@@ -52,13 +52,13 @@ typedef struct					s_args
 	struct s_args				*next;
 }								t_args;
 
-char							*ft_strchr(const char *s, int c);
-size_t							ft_strlen(const char *s);
-void							*ft_memalloc(size_t size);
-char							*ft_strdup(const char *s1);
+char							*ft_strchr_ptf(const char *s, int c);
+size_t							ft_strlen_ptf(const char *s);
+void							*ft_memalloc_ptf(size_t size);
+char							*ft_strdup_ptf(const char *s1);
 int								ft_is_digit(int c);
-int								ft_atoi(const char *str);
-char							*ft_itoa(long long n);
+int								ft_atoi_ptf(const char *str);
+char							*ft_itoa_ll(long long n);
 char							*ft_itoa_base(unsigned long long n, int base);
 char							*ft_itoa_base_upp(unsigned long long n,
 								int base);

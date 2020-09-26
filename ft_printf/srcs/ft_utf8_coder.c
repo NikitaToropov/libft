@@ -16,7 +16,7 @@ char	*ft_utf8_coder(unsigned int sym, t_args *list)
 {
 	char		*str;
 
-	if (!(str = ft_memalloc(5)))
+	if (!(str = ft_memalloc_ptf(5)))
 		exit(1);
 	if (sym < 128 || !(list->flags & UNIQODE))
 		str[0] = (char)sym;

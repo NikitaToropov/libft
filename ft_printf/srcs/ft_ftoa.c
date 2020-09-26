@@ -67,7 +67,7 @@ char	*ft_convert_ld(size_t sign_dig, long double ld)
 
 	ft_lengths(&int_len, &frac_len, sign_dig, ld);
 	len = int_len + frac_len + 1;
-	if (!(res = ft_memalloc(len + 1)))
+	if (!(res = ft_memalloc_ptf(len + 1)))
 		exit(1);
 	ft_fill_int(res, int_len, sign_dig, ld);
 	if (frac_len)
@@ -80,15 +80,15 @@ void	ft_ftoa(t_args *list)
 	size_t				sign_dig;
 
 	if (!list->float_arg)
-		list->string = ft_strdup("0.");
+		list->string = ft_strdup_ptf("0.");
 	else if (list->float_arg != list->float_arg)
-		list->string = ft_strdup("nan");
+		list->string = ft_strdup_ptf("nan");
 	else if (list->float_arg == (list->float_arg + list->float_arg)
 	&& list->float_arg > 0)
-		list->string = ft_strdup("inf");
+		list->string = ft_strdup_ptf("inf");
 	else if (list->float_arg == (list->float_arg + list->float_arg)
 	&& list->float_arg < 0)
-		list->string = ft_strdup("-inf");
+		list->string = ft_strdup_ptf("-inf");
 	else
 	{
 		if (list->float_arg < 0)

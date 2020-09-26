@@ -22,14 +22,14 @@ unsigned int	ft_uns_len(unsigned long long nb, int base)
 	return (ln);
 }
 
-char			*ft_itoa(long long n)
+char			*ft_itoa_ptf(long long n)
 {
 	char					*result;
 	unsigned long long		number;
 	unsigned int			len;
 
 	if (n == 0)
-		return (ft_strdup("0"));
+		return (ft_strdup_ptf("0"));
 	len = 0;
 	number = (unsigned long long)(n);
 	if (n < 0 && (len += 1))
@@ -56,7 +56,7 @@ char			*ft_itoa_base(unsigned long long n, int base)
 
 	l = "0123456789abcdef";
 	if (n == 0)
-		return (ft_strdup("0"));
+		return (ft_strdup_ptf("0"));
 	len = ft_uns_len(n, base);
 	if (!(result = (char*)malloc(sizeof(char) * (len + 1))))
 		exit(1);
@@ -77,7 +77,7 @@ char			*ft_itoa_base_upp(unsigned long long n, int base)
 
 	l = "0123456789ABCDEF";
 	if (n == 0)
-		return (ft_strdup("0"));
+		return (ft_strdup_ptf("0"));
 	len = ft_uns_len(n, base);
 	if (!(result = (char*)malloc(sizeof(char) * (len + 1))))
 		exit(1);

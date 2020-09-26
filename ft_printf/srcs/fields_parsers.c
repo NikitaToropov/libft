@@ -23,7 +23,7 @@ size_t		ft_find_parameter(char *str, t_args *list)
 		tmp_str++;
 	if (*tmp_str == '$' && tmp_str != str)
 	{
-		list->order_counter = ft_atoi(str);
+		list->order_counter = ft_atoi_ptf(str);
 		return (tmp_str - str + 1);
 	}
 	return (0);
@@ -49,7 +49,7 @@ size_t		ft_find_flag(char c, t_args *list)
 		list->flags &= (~ZERO);
 	if (list->flags & PLUS)
 		list->flags &= (~SPACE);
-	if (c && ft_strchr("b#0-+' ", c))
+	if (c && ft_strchr_ptf("b#0-+' ", c))
 		return (1);
 	return (0);
 }
@@ -77,7 +77,7 @@ size_t		ft_find_width(char *str, t_args *list)
 		tmp_str++;
 	if (tmp_str != str)
 	{
-		list->width = ft_atoi(str);
+		list->width = ft_atoi_ptf(str);
 		list->num_width = 0;
 	}
 	return (tmp_str - str);
@@ -104,7 +104,7 @@ size_t		ft_find_precision(char *str, t_args *list)
 		tmp_str = &str[1];
 		while (*tmp_str >= '0' && *tmp_str <= '9')
 			tmp_str++;
-		list->precision = ft_atoi(&str[1]);
+		list->precision = ft_atoi_ptf(&str[1]);
 		return (tmp_str - str);
 	}
 	return (0);

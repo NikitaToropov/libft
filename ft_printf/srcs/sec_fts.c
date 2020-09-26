@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void		*ft_memalloc(size_t size)
+void		*ft_memalloc_ptf(size_t size)
 {
 	void *ptr;
 
@@ -27,7 +27,7 @@ void		*ft_memalloc(size_t size)
 	return (ptr);
 }
 
-char		*ft_strdup(const char *s1)
+char		*ft_strdup_ptf(const char *s1)
 {
 	char			*res;
 	long long int	ln;
@@ -37,7 +37,7 @@ char		*ft_strdup(const char *s1)
 	ln = 0;
 	while (s1[ln])
 		ln++;
-	if (!(res = ft_memalloc(ln + 1)))
+	if (!(res = ft_memalloc_ptf(ln + 1)))
 		return (NULL);
 	ln--;
 	while (ln >= 0)
@@ -48,7 +48,7 @@ char		*ft_strdup(const char *s1)
 	return (res);
 }
 
-char		*ft_strchr(const char *s, int c)
+char		*ft_strchr_ptf(const char *s, int c)
 {
 	while (*s)
 	{
@@ -61,7 +61,7 @@ char		*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-size_t		ft_strlen(const char *s)
+size_t		ft_strlen_ptf(const char *s)
 {
 	size_t		i;
 

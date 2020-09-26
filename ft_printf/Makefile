@@ -21,7 +21,7 @@ INCLUDES = ./includes
 # files
 C_FILES = 	ft_printf.c\
 			ft_parse_format.c\
-			ft_atoi.c\
+			ft_atoi_ptf.c\
 			sec_fts.c\
 			fields_parsers.c\
 			ft_parse_len.c\

@@ -28,7 +28,7 @@ int		ft_bank_check(t_args *list)
 	char	*frac;
 	int		c;
 
-	frac = ft_strchr(list->string, '.') + 1;
+	frac = ft_strchr_ptf(list->string, '.') + 1;
 	if (list->precision == 0)
 		c = (int)(*(frac - 2) - '0') % 2;
 	else
@@ -46,10 +46,10 @@ void	ft_lengthen_str(t_args *list, int frac_len)
 	int		old_len;
 	int		i;
 
-	old_len = ft_strlen(list->string);
+	old_len = ft_strlen_ptf(list->string);
 	new_len = old_len - frac_len + list->precision;
 	tmp = list->string;
-	if (!(list->string = ft_memalloc(new_len + 1)))
+	if (!(list->string = ft_memalloc_ptf(new_len + 1)))
 		exit(1);
 	i = 0;
 	while (i < new_len)
@@ -68,7 +68,7 @@ void	ft_add_carry(char *str)
 	long int		i;
 	int				carry;
 
-	i = ft_strlen(str) - 1;
+	i = ft_strlen_ptf(str) - 1;
 	carry = 1;
 	while (i >= 0 && carry && str[i] != '-')
 	{
@@ -82,7 +82,7 @@ void	ft_add_carry(char *str)
 	}
 	if (carry)
 	{
-		i = ft_strlen(str);
+		i = ft_strlen_ptf(str);
 		while (i >= 0)
 		{
 			str[i + 1] = str[i];
@@ -99,10 +99,10 @@ void	ft_precision_f(t_args *list)
 
 	if (list->precision == -1)
 		list->precision = 6;
-	if (!(frac = ft_strchr(list->string, '.')))
+	if (!(frac = ft_strchr_ptf(list->string, '.')))
 		return ;
 	frac += 1;
-	frac_len = ft_strlen(frac);
+	frac_len = ft_strlen_ptf(frac);
 	if (list->precision < frac_len)
 	{
 		if (frac[list->precision] > '5' ||

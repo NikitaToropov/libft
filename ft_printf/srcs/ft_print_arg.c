@@ -45,7 +45,7 @@ void	ft_analise_ouxp(t_args *list, int *n_zeros, int *n_spaces)
 		list->flags &= ~ZERO;
 	if (list->precision > (int)list->str_len)
 		*n_zeros += list->precision - list->str_len;
-	if ((list->flags & HASH && ft_strchr("xX", list->type))
+	if ((list->flags & HASH && ft_strchr_ptf("xX", list->type))
 	|| list->type == 'p')
 		i += 2;
 	if (list->flags & HASH && list->type == 'o' && (i += 1))
@@ -106,9 +106,9 @@ int		ft_print_arg(t_args *list)
 
 	n_spaces = 0;
 	n_zeros = 0;
-	if (ft_strchr("dif", list->type))
+	if (ft_strchr_ptf("dif", list->type))
 		ft_analise_dif(list, &n_zeros, &n_spaces);
-	else if (ft_strchr("ouxXp", list->type))
+	else if (ft_strchr_ptf("ouxXp", list->type))
 		ft_analise_ouxp(list, &n_zeros, &n_spaces);
 	else
 		ft_analise_cs(list, &n_zeros, &n_spaces);
