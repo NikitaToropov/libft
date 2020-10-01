@@ -48,7 +48,7 @@ char			*ft_itoa_ptf(long long n)
 	return (result);
 }
 
-char			*ft_itoa_base(unsigned long long n, int base)
+char			*ft_itoa_ll_base(unsigned long long n, int base)
 {
 	char					*result;
 	unsigned int			len;

@@ -59,7 +59,7 @@ char							*ft_strdup_ptf(const char *s1);
 int								ft_is_digit(int c);
 int								ft_atoi_ptf(const char *str);
 char							*ft_itoa_ll(long long n);
-char							*ft_itoa_base(unsigned long long n, int base);
+char							*ft_itoa_ll_base(unsigned long long n, int base);
 char							*ft_itoa_base_upp(unsigned long long n,
 								int base);
 void							ft_ftoa(t_args *list);
