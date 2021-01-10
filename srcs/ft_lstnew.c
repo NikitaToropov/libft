@@ -6,7 +6,7 @@
 /*   By: cmissy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/27 00:28:39 by cmissy            #+#    #+#             */
-/*   Updated: 2019/04/30 19:20:48 by cmissy           ###   ########.fr       */
+/*   Updated: 2021/01/10 13:49:05 by cmissy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list		*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list		*list;
 
-	if (!(list = (t_list*) ft_memalloc(sizeof(t_list))))
+	if (!(list = (t_list*)ft_memalloc(sizeof(t_list))))
 		return (0);
 	if (!content || !content_size)
 	{

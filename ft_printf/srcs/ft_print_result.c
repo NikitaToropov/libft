@@ -28,7 +28,7 @@ static void			ft_convert_args(t_args *list)
 		if (list->type == 'o' && !(list->int_arg) && list->flags & HASH)
 			list->flags &= ~HASH;
 		else if (ft_strchr_ptf("uxXo", list->type) && !(list->int_arg) &&
-				 !(list->precision))
+				!(list->precision))
 			list->string[0] = '\0';
 		if (ft_strchr_ptf("xX", list->type) && !(list->int_arg))
 			list->flags &= ~HASH;
