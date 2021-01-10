@@ -6,7 +6,7 @@
 /*   By: cmissy <cmissy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 18:27:58 by cmissy            #+#    #+#             */
-/*   Updated: 2019/12/26 21:39:36 by cmissy           ###   ########.fr       */
+/*   Updated: 2021/01/10 13:41:12 by cmissy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ void		ft_parse_types_di_part_two(t_args *list)
 	{
 		if ((short)list->int_arg < 0 && (list->sign = '-'))
 			list->int_arg = ~list->int_arg + 1;
-		list->string = ft_itoa_ll_base((unsigned short) list->int_arg, 10);
+		list->string = ft_itoa_ll_base((unsigned short)list->int_arg, 10);
 	}
 	else if (list->length == CHAR)
 	{
 		if ((char)list->int_arg < 0 && (list->sign = '-'))
 			list->int_arg = ~list->int_arg + 1;
-		list->string = ft_itoa_ll_base((unsigned char) list->int_arg, 10);
+		list->string = ft_itoa_ll_base((unsigned char)list->int_arg, 10);
 	}
 	else
 	{
 		if ((int)list->int_arg < 0 && (list->sign = '-'))
 			list->int_arg = ~list->int_arg + 1;
-		list->string = ft_itoa_ll_base((unsigned int) list->int_arg, 10);
+		list->string = ft_itoa_ll_base((unsigned int)list->int_arg, 10);
 	}
 }
 
@@ -40,13 +40,14 @@ void		ft_parse_types_di(t_args *list)
 	{
 		if ((long int)list->int_arg < 0 && (list->sign = '-'))
 			list->int_arg = ~list->int_arg + 1;
-		list->string = ft_itoa_ll_base((unsigned long int) list->int_arg, 10);
+		list->string = ft_itoa_ll_base((unsigned long int)list->int_arg, 10);
 	}
 	else if (list->length == LONG_LONG)
 	{
 		if ((long long int)list->int_arg < 0 && (list->sign = '-'))
 			list->int_arg = ~list->int_arg + 1;
-		list->string = ft_itoa_ll_base((unsigned long long int) list->int_arg, 10);
+		list->string =
+				ft_itoa_ll_base((unsigned long long int)list->int_arg, 10);
 	}
 	else
 		ft_parse_types_di_part_two(list);
@@ -57,27 +58,28 @@ void		ft_parse_types_uo(t_args *list)
 	if (list->type == 'o')
 	{
 		if (list->length == LONG_LONG)
-			list->string = ft_itoa_ll_base((unsigned long long) list->int_arg, 8);
+			list->string =
+					ft_itoa_ll_base((unsigned long long)list->int_arg, 8);
 		else if (list->length == LONG)
-			list->string = ft_itoa_ll_base((unsigned long int) list->int_arg, 8);
+			list->string = ft_itoa_ll_base((unsigned long int)list->int_arg, 8);
 		else if (list->length == CHAR)
-			list->string = ft_itoa_ll_base((unsigned char) list->int_arg, 8);
+			list->string = ft_itoa_ll_base((unsigned char)list->int_arg, 8);
 		else if (list->length == SHORT)
-			list->string = ft_itoa_ll_base((unsigned short) list->int_arg, 8);
+			list->string = ft_itoa_ll_base((unsigned short)list->int_arg, 8);
 		else
-			list->string = ft_itoa_ll_base((unsigned int) list->int_arg, 8);
+			list->string = ft_itoa_ll_base((unsigned int)list->int_arg, 8);
 		return ;
 	}
 	if (list->length == 'L')
-		list->string = ft_itoa_ll_base((unsigned long long) list->int_arg, 10);
+		list->string = ft_itoa_ll_base((unsigned long long)list->int_arg, 10);
 	else if (list->length == 'l')
-		list->string = ft_itoa_ll_base((unsigned long int) list->int_arg, 10);
+		list->string = ft_itoa_ll_base((unsigned long int)list->int_arg, 10);
 	else if (list->length == CHAR)
-		list->string = ft_itoa_ll_base((unsigned char) list->int_arg, 10);
+		list->string = ft_itoa_ll_base((unsigned char)list->int_arg, 10);
 	else if (list->length == SHORT)
-		list->string = ft_itoa_ll_base((unsigned short) list->int_arg, 10);
+		list->string = ft_itoa_ll_base((unsigned short)list->int_arg, 10);
 	else
-		list->string = ft_itoa_ll_base((unsigned int) list->int_arg, 10);
+		list->string = ft_itoa_ll_base((unsigned int)list->int_arg, 10);
 }
 
 void		ft_parse_types_x(t_args *list)
@@ -87,13 +89,13 @@ void		ft_parse_types_x(t_args *list)
 		if (list->length == LONG_LONG)
 			list->string = ft_itoa_ll_base(list->int_arg, 16);
 		else if (list->length == LONG)
-			list->string = ft_itoa_ll_base((unsigned long) list->int_arg, 16);
+			list->string = ft_itoa_ll_base((unsigned long)list->int_arg, 16);
 		else if (list->length == CHAR)
-			list->string = ft_itoa_ll_base((unsigned char) list->int_arg, 16);
+			list->string = ft_itoa_ll_base((unsigned char)list->int_arg, 16);
 		else if (list->length == SHORT)
-			list->string = ft_itoa_ll_base((unsigned short) list->int_arg, 16);
+			list->string = ft_itoa_ll_base((unsigned short)list->int_arg, 16);
 		else
-			list->string = ft_itoa_ll_base((unsigned int) list->int_arg, 16);
+			list->string = ft_itoa_ll_base((unsigned int)list->int_arg, 16);
 		return ;
 	}
 	if (list->length == LONG_LONG)
@@ -129,7 +131,7 @@ void		ft_parse_len(t_args *list)
 		if (list->type == 's')
 		{
 			if (list->int_arg)
-				list->string = ft_strdup_ptf((char *) list->int_arg);
+				list->string = ft_strdup_ptf((char *)list->int_arg);
 			else
 				list->string = ft_strdup_ptf("(null)");
 		}
